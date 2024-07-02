@@ -6,8 +6,6 @@ EntropyPeek is an unofficial implementation of [Fast-ODT (Fast Outlier Detection
 - [Installation](#installation)
 - [Usage](#usage)
 - [Example](#example)
-- [Contributing](#contributing)
-- [License](#license)
 
 ## Features
 - Calculate entropy of attribute values.
