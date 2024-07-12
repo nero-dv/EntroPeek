@@ -34,71 +34,48 @@ EntropyPeek is an unofficial implementation of [Fast-ODT (Fast Outlier Detection
 1. **Import the necessary modules and classes**:
     ```python
     import numpy as np
-    from entropy_analyzer import EntropyAnalyzer
+    from fast-odt import calculate_threshold_alpha, detect_outliers
     ```
 
-2. **Initialize the EntropyAnalyzer with your data**:
+2. **Initialize the analyzer with your data**:
     ```python
-    data = np.array([
-        # 0  1  2
-        [1, 2, 3], #0
-        [1, 2, 3], #1
-        [4, 5, 6], #2
-        [1, 2, 3], #...
-        [4, 5, 6],
-        [7, 8, 9],
-        [1, 5, 9],
-        [4, 2, 6],
-        [4, 2, 6],
-        [1, 5, 9],
-        [1, 2, 3],
-        [4, 5, 6],
-        [7, 8, 9],
-        [1, 5, 9],
-        [4, 2, 6],
-        [4, 2, 6],
-        [1, 5, 9],
-    ])
-
-    analyzer = EntropyAnalyzer(data)
+    # Sample data
+    data = np.array(
+        [
+            # 0  1  2
+            [1, 2, 3], #0
+            [1, 2, 3], #1
+            [4, 5, 6], #2
+            [1, 2, 3], #...
+            [4, 5, 6],
+            [7, 8, 9],
+            [1, 5, 9],
+            [4, 2, 6],
+            [4, 2, 6],
+            [1, 5, 9],
+            [1, 2, 3],
+            [4, 5, 6],
+            [7, 8, 9],
+            [1, 5, 9],
+            [4, 2, 6],
+            [4, 2, 6],
+            [1, 5, 9],
+        ]
+    )
     ```
 
 3. **Calculate alpha and detect outliers**:
     ```python
-    alpha = analyzer.calculate_threshold_alpha()
-    outliers = analyzer.detect_outliers(alpha)
+    # Calculate alpha
+    alpha = calculate_threshold_alpha(data)
     print(f"Calculated Threshold Alpha: {alpha}")
+
+    # Detect outliers
+    outliers = detect_outliers(data, alpha)
     print(f"Detected Outliers: {outliers}")
     ```
 
-## Example
 
-Here is an example demonstrating how to use the Entropy Analyzer:
-
-```python
-import numpy as np
-from entropy_analyzer import EntropyAnalyzer
-
-data = np.array([
-    [1, 2, 3],
-    [1, 2, 3],
-    [4, 5, 6],
-    [1, 2, 3],
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
-])
-
-analyzer = EntropyAnalyzer(data)
-
-# Calculate alpha
-alpha = analyzer.calculate_threshold_alpha()
-print(f"Calculated Threshold Alpha: {alpha}")
-
-# Detect outliers
-outliers = analyzer.detect_outliers(alpha)
-print(f"Detected Outliers: {outliers}")
-```
 
 ## Limitations
 
