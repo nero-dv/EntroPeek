@@ -18,11 +18,11 @@ EntropyPeek is an unofficial implementation of [Fast-ODT (Fast Outlier Detection
 
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/yourusername/entropy-analyzer.git
+    git clone https://github.com/nero-dv/EntroPeek.git
     ```
 2. **Navigate into the project directory**:
     ```bash
-    cd entropy-analyzer
+    cd EntroPeek
     ```
 3. **Install the required packages**:
     ```bash
